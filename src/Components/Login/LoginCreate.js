@@ -1,11 +1,11 @@
 import React from 'react';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
+import Error from '../Helper/Error';
 import useForm from '../../Hooks/useForm';
 import { USER_POST } from '../../Api';
 import { UserContext } from '../../UserContext';
 import useFetch from '../../Hooks/useFetch';
-import Error from '../Helper/Error';
 
 const LoginCreate = () => {
   const username = useForm();
@@ -32,7 +32,7 @@ const LoginCreate = () => {
       <form onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Email" type="email" name="email" {...email} />
-        <Input label="password" type="password" name="password" {...password} />
+        <Input label="Senha" type="password" name="password" {...password} />
         {loading ? (
           <Button disabled>Cadastrando...</Button>
         ) : (

@@ -15,16 +15,21 @@ const useFetch = () => {
       json = await response.json();
       if (response.ok === false) throw new Error(json.message);
     } catch (err) {
+      json = null;
       setError(err.message);
     } finally {
-      json = null;
       setData(json);
       setLoading(false);
       return { response, json };
     }
   }, []);
 
-  return { data, loading, error, request };
+  return {
+    data,
+    loading,
+    error,
+    request,
+  };
 };
 
 export default useFetch;

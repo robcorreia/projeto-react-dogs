@@ -22,7 +22,7 @@ const UserHeaderNav = () => {
     <>
       {mobile && (
         <button
-          area-label="Menu"
+          aria-label="Menu"
           className={`${styles.mobileButton} ${
             mobileMenu && styles.mobileButtonActive
           }`}
